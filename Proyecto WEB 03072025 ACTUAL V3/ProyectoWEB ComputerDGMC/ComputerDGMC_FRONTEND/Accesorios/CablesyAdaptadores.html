@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cables y Adaptadores - DGMC</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .producto-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            transition: box-shadow 0.2s;
+        }
+
+            .producto-card:hover {
+                box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+            }
+
+            .producto-card img {
+                max-width: 120px;
+                max-height: 120px;
+                margin-bottom: 1rem;
+            }
+
+        .producto-nombre {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .producto-precio {
+            color: #1976d2;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>DGMC</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../QuienesSomos.html">Quiénes somos</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="../Contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="login-section">
+                <a href="#">Iniciar Sesión</a>
+            </div>
+        </div>
+    </header>
+    <main class="content-wrapper">
+        <aside class="sidebar">
+            <h3>Categorías</h3>
+            <ul class="category-list">
+                <li>
+                    <a href="#">Accesorios</a>
+                    <ul>
+                        <li><a href="AccesoriosParaLaptops.html">Accesorios para laptop</a></li>
+                        <li><a href="CablesyAdaptadores.html">Cables y Adaptadores</a></li>
+                        <li><a href="MaletinesParaLaptops.html">Maletines para laptop</a></li>
+                        <li><a href="MousePad.html">Mousepad</a></li>
+                        <li><a href="SoportesParaMonitores.html">Soportes para monitores</a></li>
+                        <li><a href="UPS.html">UPS</a></li>
+                    </ul>
+                </li>
+                <!-- Aquí puedes agregar el resto de categorías principales -->
+            </ul>
+        </aside>
+        <div class="main-content">
+            <h2 style="margin-top:2rem; text-align:center;">Cables y Adaptadores</h2>
+            <div class="productos-grid">
+                <div class="producto-card">
+                    <img src="../img/Adaptador de audio usb tipo - C a 3.5mm hembra genius acc-c100.jpg" alt="Adaptador de audio usb tipo - C a 3.5mm hembra genius acc-c100">
+                    <div class="producto-nombre">Adaptador de audio usb tipo - C a 3.5mm hembra genius acc-c100</div>
+                    <div class="producto-precio">$5.00</div>
+                </div>
+                <div class="producto-card">
+                    <img src="../img/Adaptador de usb tipo c a hdmi tp-link ua520c 4k 60hz windows ios mac-os linux chrome.jpg" alt="Adaptador de usb tipo c a hdmi tp-link ua520c 4k 60hz windows ios mac-os linux chrome">
+                    <div class="producto-nombre">Adaptador de usb tipo c a hdmi tp-link ua520c 4k 60hz windows ios mac-os linux chrome</div>
+                    <div class="producto-precio">$28.00</div>
+                </div>
+                <div class="producto-card">
+                    <img src="../img/Adaptador usb a bluetooth v5.3 tp-link ub500 plus.jpg" alt="Adaptador usb a bluetooth v5.3 tp-link ub500 plus">
+                    <div class="producto-nombre">Adaptador usb a bluetooth v5.3 tp-link ub500 plus</div>
+                    <div class="producto-precio">$8.00</div>
+                </div>
+                <div class="producto-card">
+                    <img src="../img/Adaptador usb tipo c a rj45 y 3 usb 3.0 tp-link ue330c.jpg" alt="Adaptador usb tipo c a rj45 y 3 usb 3.0 tp-link ue330c">
+                    <div class="producto-nombre">Adaptador usb tipo c a rj45 y 3 usb 3.0 tp-link ue330c</div>
+                    <div class="producto-precio">$21.00</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 DGMC. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html> 

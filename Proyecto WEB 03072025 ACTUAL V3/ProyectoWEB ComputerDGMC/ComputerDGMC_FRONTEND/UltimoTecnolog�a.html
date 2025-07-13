@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DGMC</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .latest-tech {
+  background: #f0f0f0;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.latest-tech h2 {
+  color: #222;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.latest-tech .intro {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.latest-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.product-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  width: 250px;
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.product-card p {
+  font-size: 0.95em;
+  color: #666;
+}
+
+.product-card .price {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #00a896;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>DGMC</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="QuienesSomos.html">Quiénes somos</a></li>
+                    <li><a href="Ofertas.html">Ofertas</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="login-section">
+                <nav>
+                    <ul>
+                        <li><a href="Login/login.html">Iniciar Sesión</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <aside class="sidebar">
+            <h3>Categorías</h3>
+            <ul class="category-list">
+                <li><a href="Accesorios.html">Accesorios</a></li>
+                <li><a href="Componentes.html">Componentes</a></li>
+                <li><a href="Computadoras.html">Computadoras</a></li>
+                <li><a href="Gaming.html">Gaming</a></li>
+                <li><a href="LoNuevo.html">Lo nuevo</a></li>
+                <li><a href="Ofertas.html">Ofertas</a></li>
+            </ul>
+        </aside>
+
+    <section class="latest-tech">
+      <div class="container">
+        <h2>Últimas Novedades en Tecnología</h2>
+        <p class="intro">Conoce los productos más innovadores recién llegados a nuestra tienda.</p>
+
+        <div class="latest-products">
+          <div class="product-card">
+            <img src="img/Laptop HP 245 G10 14.2 1920x1080 Full HD, AMD Ryzen 3 7330U, 16GB, 512GB SSD, Windows 11 Home, Español.png" alt="Laptop Gamer 2025">
+            <h3>Laptop Gamer 2025</h3>
+            <p>Potencia, estilo y RGB por donde la mires.</p>
+            <span class="price">$1,499</span>
+          </div>
+
+          <div class="product-card">
+            <img src="img/nintendo-switch-2-logo-and-console1.jpg" alt="Consola X Evolution">
+            <h3>Consola X Evolution</h3>
+            <p>Jugabilidad 8K con latencia ultra baja.</p>
+            <span class="price">$699</span>
+          </div>
+
+          <!-- Puedes agregar más productos aquí -->
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DGMC. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html> 

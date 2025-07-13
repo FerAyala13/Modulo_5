@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesorios para laptop - DGMC</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <style>
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .producto-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            transition: box-shadow 0.2s;
+        }
+
+            .producto-card:hover {
+                box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+            }
+
+            .producto-card img {
+                max-width: 120px;
+                max-height: 120px;
+                margin-bottom: 1rem;
+            }
+
+        .producto-nombre {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .producto-precio {
+            color: #1976d2;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>DGMC</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="QuienesSomos.html">Quiénes somos</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="login-section">
+                <a href="#">Iniciar Sesión</a>
+            </div>
+        </div>
+    </header>
+    <main class="content-wrapper">
+        <h2 style="margin-top:2rem; text-align:center;">Accesorios para laptop</h2>
+        <div class="productos-grid">
+            <div class="producto-card">
+                <img src="../img/Adaptador jack usb c a plug usb 3-0.jpg" alt="Adaptador jack USB C a plug USB 3.0">
+                <div class="producto-nombre">Adaptador jack USB C a plug USB 3.0</div>
+                <div class="producto-precio">$3.00</div>
+            </div>
+            <div class="producto-card">
+                <img src="../img/6168CEPJlCL._AC_SL1500_.jpg" alt="Hub USB - C 6 en 1">
+                <div class="producto-nombre">Hub USB - C 6 en 1</div>
+                <div class="producto-precio">$20.00</div>
+            </div>
+            <div class="producto-card">
+                <img src="../img/klip.png " alt="Klip Xtreme KNS-110B Soporte para laptop con ventilador">
+                <div class="producto-nombre">Klip Xtreme KNS-110B Soporte para laptop con ventilador</div>
+                <div class="producto-precio">$35.00</div>
+            </div>
+            <div class="producto-card">
+                <img src="../img/xtech.png" alt="Xtech Kyla Base con ventilador para laptop">
+                <div class="producto-nombre">Xtech Kyla Base con ventilador para laptop</div>
+                <div class="producto-precio">$28.00</div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 DGMC. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html> 
