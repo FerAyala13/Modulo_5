@@ -51,7 +51,18 @@
                 <div class="container">
                     <h2>Explora lo último en tecnología</h2>
                     <p>Descubre los mejores productos para tus necesidades.</p>
-                    <a href="UltimoTecnología.html" class="btn">Ver Productos</a>
+                    <!-- Pasarela de productos (slider) -->
+                    <div class="product-carousel-container container">
+                      <div class="product-carousel">
+                        <img src="img/Cases/G1.jpg" alt="Gabinete APNX C1">
+                        <img src="img/Laptops/Laptop1.jpg" alt="Laptop HP 245 G10">
+                        <img src="img/Auriculares G/Headset1.png" alt="Headset Razer Blackshark">
+                        <img src="img/PlayStation 5.png" alt="PlayStation 5">
+                        <img src="img/Tarjeta Video/TDV1.png" alt="Tarjeta de Video Asus Dual RTX 5060 Ti">
+                        <img src="img/Memorias Ram/MR1.png" alt="Memoria RAM Adata Premier">
+                      </div>
+                    </div>
+                    <a href="Productos.html" class="btn">Ver Productos</a>
                 </div>
                 <section class="video-section">
   <div class="container">
@@ -107,6 +118,41 @@
 </div>
 
 </div>
+    <div class="ver-productos-btn-container">
+      <a href="Productos.html" class="btn">Ver Productos</a>
+    </div>
+    <style>
+      .product-carousel-container {
+        width: 100%;
+        overflow: hidden;
+        margin: 40px 0 20px 0;
+        display: flex;
+        justify-content: center;
+      }
+      .product-carousel {
+        display: flex;
+        gap: 40px;
+        animation: carousel-move 18s linear infinite;
+      }
+      .product-carousel img {
+        width: 180px;
+        height: 180px;
+        object-fit: contain;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        background: #fff;
+        padding: 10px;
+      }
+      @keyframes carousel-move {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .ver-productos-btn-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+    </style>
     <footer>
         <div class="container">
             <p>&copy; 2025 DGMC. Todos los derechos reservados.</p>

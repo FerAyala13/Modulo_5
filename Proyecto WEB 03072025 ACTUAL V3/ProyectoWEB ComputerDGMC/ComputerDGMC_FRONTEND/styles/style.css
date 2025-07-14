@@ -53,6 +53,12 @@ header {
 
 .login-section {
     float: right;
+    margin-right: -100px;
+}
+@media (max-width: 600px) {
+  .login-section {
+    margin-right: 10px;
+  }
 }
 
 /* Limpiar floats */
@@ -66,7 +72,7 @@ header::after,
 /* Contenedor principal con sidebar */
 .content-wrapper {
     display: flex;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 20px auto;
     gap: 20px;
 }
