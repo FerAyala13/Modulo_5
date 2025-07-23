@@ -6,11 +6,196 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>DGMC</h1>
+    <header style="background-color: #2f00ff; color: white; padding: 18px 0;">
+        <div style="display: flex; align-items: center; justify-content: space-between; max-width: 1400px; margin: 0 auto;">
+            <div style="display: flex; align-items: center; min-width: 220px;">
+                <span style="font-size: 2.5em; font-weight: bold; letter-spacing: 2px; color: #fff;">Computer DGMC</span>
+            </div>
+            <form id="busquedaForm" style="flex: 1; max-width: 600px; margin: 0 40px; display: flex; align-items: center; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <span style="padding: 0 12px; color: #888; font-size: 1.3em;">
+                    <ion-icon name="search-outline"></ion-icon>
+                </span>
+                <input id="busquedaInput" type="text" placeholder="Buscar productos..." style="flex: 1; border: none; outline: none; font-size: 1.1em; padding: 12px 8px; border-radius: 12px;">
+            </form>
+            <nav style="display: flex; align-items: center; gap: 30px; position: relative;">
+                <a href="Login/login.html" style="color: #fff; font-size: 1.25em; font-weight: 600; text-decoration: none; margin-right: 10px;">Iniciar Sesión</a>
+                <a href="RegistroUsuario.html" style="color: #fff; font-size: 1.25em; font-weight: 600; text-decoration: none; margin-right: 10px;">Registrarse</a>
+                <a href="#" id="carrito-icono" title="Carrito de compra" style="display: flex; align-items: center; color: #fff; position: relative;">
+                    <ion-icon name="cart-outline" style="font-size: 2.2em;"></ion-icon>
+                    <span id="carrito-contador" style="position: absolute; top: -8px; right: -8px; background: #4285f4; color: #fff; border-radius: 50%; font-size: 0.9em; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-weight: bold;">0</span>
+                </a>
+                <div id="mini-carrito" style="display:none; position: absolute; top: 40px; right: 0; background: #fff; color: #222; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.18); min-width: 320px; max-width: 350px; z-index: 9999; padding: 18px 12px 12px 12px;">
+                    <div id="mini-carrito-lista"></div>
+                    <button id="pagar-btn" style="width: 100%; background: #2f00ff; color: #fff; border: none; border-radius: 8px; padding: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: 12px;">Pagar</button>
+                </div>
+            </nav>
         </div>
     </header>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        const productosPorCategoria = {
+            'Accesorios.html': [
+                'Adaptador jack USB C a plug USB 3.0',
+                'Hub USB - C 6 en 1',
+                'Klip Xtreme KNS-110B Soporte para laptop con ventilador',
+                'Xtech Kyla Base con ventilador para laptop',
+                'Adaptador de audio usb tipo - C a 3.5mm hembra genius acc-c100',
+                'Adaptador de usb tipo c a hdmi tp-link ua520c 4k 60hz windows ios mac-os linux chrome',
+                'Adaptador usb a bluetooth v5.3 tp-link ub500 plus',
+                'Adaptador usb tipo c a rj45 y 3 usb 3.0 tp-link ue330c',
+                'Funda negra para laptop',
+                'Mouse Pad Gamer Munfrost EUROPA XL',
+                'Mousepad Sharkoon SKILLER SGP2 XXL',
+                'Soporte de escritorio para monitor de 13 a 32',
+                'Soporte de escritorio para monitores de hasta 32',
+                'Soporte doble de escritorio para monitores de hasta 32',
+                'UPS - Forza Line interactive SL-1501UL - 1500 VA - 900 Watt',
+                'UPS Centra CP1000 LED 8 Outs 1000VA - 500W',
+                'UPS Centra ECO LCD 700VA,350W,8 Salidas con USB A y USB C, CH700LCD',
+                'UPS Forza 1000VA,500W 6 Tomas NT-1011'
+            ],
+            'Componentes.html': [
+                'Disco duro externo seagate 2tb usb3.0 stgd2000105 marvel avengers hulk',
+                'Disco duro externo seagate 2tb usb3.0 stgd2000107 marvel avengers captain america',
+                'Disco Duro Interno Seagate Barracuda 3.5, 2TB, SATA III, 6 Gbits, 7200RPM, 256MB Cache',
+                'Disco Duro Interno Seagate Barracuda 3.5", 4TB, SATA III, 6 Gbits, 7200RPM, 256MB Cache',
+                'Unidad de almacenamiento m.2 patriot 1tb pci-e p300p1tbm28',
+                'Unidad de almacenamiento m.2 patriot 2tb pci-e p300p2tbm28',
+                'Unidad de almacenamiento m.2 sata hiksemi wave 256gb 2280 hs-ssd-wave(n)',
+                'Unidad de almacenamiento m.2 sata hiksemi wave 512gb 2280 hs-ssd-wave(n)',
+                'Gabinete APNX C1 con Ventana, Midi-Tower, ATX, Micro-ATX, Mini-ITX, USB 3.0, sin Fuente, 4 Ventiladores ARGB Incluidos, Negro',
+                'Gabinete HYTE Y40 S-Tier Aesthetic Case',
+                'Gabinete MSI MAG PANO 100R PZ, Midi-Tower, ATX, Micro-ATX, Mini-ITX, USB 3.0, sin Fuente, 4 Ventiladores Instalados, Negro',
+                'Gabinete MSI MAG PANO M100R PZ WHITE, Midi-Tower, ATX, Micro-ATX, Mini-ITX, USB 3.0, sin Fuente, 4 Ventiladores Instalados, Blanco',
+                'Gabinete NZXT H7 Flow 2024, Midi-Tower, ATX, EATX, Micro-ATX, Mini-ITX, USB 3.0, sin Fuente, 3 Ventiladores Instalados, Blanco',
+                'Gabinete NZXT H7 Flow con Ventana, Midi-Tower, Mini-ITX, Micro-ATX, ATX, EATX, USB 3.0, sin Fuente, Blanco Mate',
+                'FUENTE DE PODER THERMALTAKE SMART M 650W BRONZE ESTANDAR',
+                'FUENTE THERMALTAKE SMART 700W 80 PLUS ESTANDAR',
+                'FUENTE THERMALTAKE SMART BM2 550W BRONZE SEMI MODULAR',
+                'FUENTE THERMALTAKE SMART BX1 550W BRONZE ESTANDAR',
+                'Memoria ram adata pREMIER ddr5 4800MHZ 16gb udimm',
+                'Memoria ram corsair vengeance rgb ddr5 32gb 5200mhz cmh32gx5m1b5200z40 pc',
+                'Memoria ram ddr4 hiksemi armor 8gb 3200mhz hsc408u32z2 pc',
+                'Memoria ram ddr5 xpg caster 16gb 6000mts pc ax5u6000c3016g-ccagy',
+                'Tarjeta Madre ASUS Micro ATX PRIME A520M-A II CSM, S-AM4, A520, HDMI, 128GB DDR4 para AMD',
+                'Tarjeta Madre ASUS micro ATX PRIME A520M-K, S-AM4, AMD A520, HDMI, 64GB DDR4 para AMD',
+                'Tarjeta Madre ASUS Micro ATX PRIME B550M-A AC, S-AM4, AMD B550, HDMI, 128GB DRR4, para AMD',
+                'Tarjeta Madre Gigabyte Micro ATX B550M DS3H AC Rev. 1.5, S-AM4, AMD B550, HDMI, 128GB DDR4 para AMD'
+            ],
+            'Computadoras.html': [
+                'Laptop HP 245 G10 14.2 1920x1080 Full HD, AMD Ryzen 3 7330U, 16GB, 512GB SSD, Windows 11 Home, Español',
+                'Laptop Hp 240 G9 14 I5-1235u, 8gb, 256gb Ssd Win 11',
+                'Laptop Lenovo ideapad 1 15amn7, amd ryzen 3 7320u, 8gb ssd 256gb pantalla fhd 15.6p w11hs abyss blue 82vg00bjus kb us',
+                'Laptop asus e1504ga-wb31 intel core i3 n305, 8gb ddr4, ssd 128gb pantalla fhd 15.6p w11hs black kb us'
+            ],
+            'Gaming.html': [
+                'Headset Razer Blackshark V2 X Wired Gaming Quartz Edi Pink, Rz04-03240800-R3u1',
+                'Headset Inalambrico Bluetooth Astro A50 Gen5 Pc Xbox Ps4 Ps5 Ns Base Magnetica Bat Recargable 939-002229 Hasta 24h Blanco',
+                'Headset Razer Blackshark V2 X 3.5mm Rz04-03241500-R3u1 Blanco Xbox Licenced',
+                'Headset Jbl Quantum 100m2 Multiplataforma Pc Ps4 Ps5 Xbox Mac Sw Negro Jblqtum100m2blkam',
+                'Headset Inalambrico Bluetooth Astro A50 Gen5 Pc Xbox Ps4 Ps5 Ns Base Magnetica Bat Recargable 939-002217 Hasta 24h Negro',
+                'PlayStation 5',
+                'Control Sony'
+            ]
+        };
+        document.getElementById('busquedaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const valor = document.getElementById('busquedaInput').value.trim().toLowerCase();
+            let encontrado = false;
+            for (const categoria in productosPorCategoria) {
+                for (const producto of productosPorCategoria[categoria]) {
+                    if (producto.toLowerCase().includes(valor)) {
+                        window.location.href = categoria;
+                        encontrado = true;
+                        break;
+                    }
+                }
+                if (encontrado) break;
+            }
+            if (!encontrado) {
+                alert('No existe o no hay en stock.');
+            }
+        });
+
+    // --- Carrito de compras ---
+    function actualizarContadorCarrito() {
+        const carrito = JSON.parse(localStorage.getItem('carritoDGMC') || '[]');
+        document.getElementById('carrito-contador').textContent = carrito.length;
+    }
+
+    function renderMiniCarrito() {
+        const carrito = JSON.parse(localStorage.getItem('carritoDGMC') || '[]');
+        const lista = document.getElementById('mini-carrito-lista');
+        if (carrito.length === 0) {
+            lista.innerHTML = '<p style="text-align:center; color:#888;">El carrito está vacío.</p>';
+        } else {
+            lista.innerHTML = carrito.map((prod, idx) => `
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px; position:relative;">
+                    <img src="${prod.imagen}" alt="${prod.nombre}" style="width:48px; height:48px; object-fit:cover; border-radius:8px; border:1px solid #eee;">
+                    <div style="flex:1;">
+                        <div style="font-weight:600;">${prod.nombre}</div>
+                        <div style="color:#2f00ff; font-weight:bold;">$${prod.precio}</div>
+                    </div>
+                    <span class="eliminar-producto" data-idx="${idx}" style="position:absolute; top:4px; right:4px; cursor:pointer; color:#888; font-size:1.3em;">
+                        <ion-icon name="close-outline"></ion-icon>
+                    </span>
+                </div>
+            `).join('');
+        }
+        document.querySelectorAll('.eliminar-producto').forEach(el => {
+            el.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const idx = parseInt(this.getAttribute('data-idx'));
+                const carrito = JSON.parse(localStorage.getItem('carritoDGMC') || '[]');
+                carrito.splice(idx, 1);
+                localStorage.setItem('carritoDGMC', JSON.stringify(carrito));
+                renderMiniCarrito();
+                actualizarContadorCarrito();
+            });
+        });
+    }
+
+    // Mostrar/ocultar mini-carrito
+    document.getElementById('carrito-icono').addEventListener('click', function(e) {
+        e.preventDefault();
+        const mini = document.getElementById('mini-carrito');
+        if (mini.style.display === 'none' || mini.style.display === '') {
+            renderMiniCarrito();
+            mini.style.display = 'block';
+        } else {
+            mini.style.display = 'none';
+        }
+    });
+    // Cerrar mini-carrito al hacer clic fuera
+    document.addEventListener('click', function(e) {
+        const mini = document.getElementById('mini-carrito');
+        const icono = document.getElementById('carrito-icono');
+        if (!mini.contains(e.target) && !icono.contains(e.target)) {
+            mini.style.display = 'none';
+        }
+    });
+    // Botón pagar
+    document.getElementById('pagar-btn').addEventListener('click', function() {
+        window.location.href = 'Pago.html';
+    });
+    // Agregar al carrito (delegación para todos los botones)
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('btn') && e.target.textContent.includes('Agregar al carrito')) {
+            const productDiv = e.target.closest('.product');
+            if (!productDiv) return;
+            const nombre = productDiv.querySelector('p').textContent;
+            const precio = productDiv.querySelector('.price') ? productDiv.querySelector('.price').textContent.replace('$','').trim() : '0.00';
+            const imagen = productDiv.querySelector('img') ? productDiv.querySelector('img').getAttribute('src') : '';
+            const carrito = JSON.parse(localStorage.getItem('carritoDGMC') || '[]');
+            carrito.push({ nombre, precio, imagen });
+            localStorage.setItem('carritoDGMC', JSON.stringify(carrito));
+            actualizarContadorCarrito();
+        }
+    });
+    // Inicializar contador al cargar
+    actualizarContadorCarrito();
+    </script>
     <main class="content-wrapper">
         <div class="main-content">
             <h2>Accesorios para laptop</h2>

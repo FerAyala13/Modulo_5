@@ -1,12 +1,19 @@
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace ComputerDGMC_Backend
 {
     public class Usuario
     {
-        [BsonElement("Usuario")]
-        public string NombreUsuario { get; set; }
-        [BsonElement("Contrasena")]
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonIgnoreIfNull]
+        public string? Id { get; set; }
+
+        [BsonElement("Correo")]
+        public string Correo { get; set; }
+
+        [BsonElement("Contraseña")]
         public string Contrasena { get; set; }
     }
 } 

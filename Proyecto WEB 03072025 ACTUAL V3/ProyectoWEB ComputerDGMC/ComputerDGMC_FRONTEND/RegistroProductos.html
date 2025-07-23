@@ -2,25 +2,325 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registro de Productos - DGMC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Productos</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <style>
+        .registro-productos-container {
+            width: 95vw;
+            max-width: 1200px;
+            margin: 40px auto;
+            background: rgba(20, 30, 50, 0.95);
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+            padding: 32px 32px 24px 32px;
+            color: #fff;
+        }
+        .registro-productos-container h1 {
+            font-size: 2.2rem;
+            margin-bottom: 24px;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        .form-producto {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-bottom: 32px;
+            align-items: flex-end;
+            justify-content: center;
+        }
+        .form-producto label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        .form-producto input[type="text"],
+        .form-producto input[type="number"] {
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #2a3a4d;
+            background: #1a2332;
+            color: #fff;
+            width: 180px;
+        }
+        .form-producto input[type="file"] {
+            color: #fff;
+            background: #1a2332;
+            border: none;
+            width: 180px;
+        }
+        .form-producto button {
+            background: #2ecc71;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .form-producto button:hover {
+            background: #27ae60;
+        }
+        .tabla-productos {
+            width: 100%;
+            border-collapse: collapse;
+            background: #182033;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .tabla-productos th, .tabla-productos td {
+            padding: 12px 10px;
+            text-align: center;
+        }
+        .tabla-productos th {
+            background: #22304a;
+            font-weight: 600;
+        }
+        .tabla-productos tr:nth-child(even) {
+            background: #1e2940;
+        }
+        .tabla-productos tr:nth-child(odd) {
+            background: #182033;
+        }
+        .acciones ion-icon {
+            font-size: 1.3rem;
+            cursor: pointer;
+            margin: 0 6px;
+            vertical-align: middle;
+            transition: color 0.2s;
+        }
+        .acciones .editar {
+            color: #3498db;
+        }
+        .acciones .editar:hover {
+            color: #217dbb;
+        }
+        .acciones .eliminar {
+            color: #e74c3c;
+        }
+        .acciones .eliminar:hover {
+            color: #c0392b;
+        }
+        .miniatura-img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #2a3a4d;
+            background: #fff;
+        }
+        @media (max-width: 900px) {
+            .registro-productos-container {
+                padding: 12px 2vw;
+            }
+            .form-producto input[type="text"],
+            .form-producto input[type="number"],
+            .form-producto input[type="file"] {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>DGMC - Registro de Productos</h1>
+    <div class="registro-productos-container">
+        <h1>Registro de Productos</h1>
+        <form class="form-producto" id="formProducto">
+            <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div>
+                <label for="categoria">Categoría</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="">Selecciona una categoría</option>
+                    <option value="Accesorios">Accesorios</option>
+                    <option value="Componentes">Componentes</option>
+                    <option value="Computadoras">Computadoras</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="Otra">Otra...</option>
+                </select>
+                <input type="text" id="categoriaPersonalizada" name="categoriaPersonalizada" placeholder="Escribe la categoría" style="display:none; margin-top:6px;" />
+            </div>
+            <div>
+                <label for="precio">Precio</label>
+                <input type="number" id="precio" name="precio" min="0" step="0.01" required>
         </div>
-    </header>
-    <main class="content-wrapper">
-        <div class="main-content">
-            <h2>Bienvenido, Administrador</h2>
-            <p>Aquí podrás registrar y gestionar los productos del sistema.</p>
+            <div>
+                <label for="imagen">Imagen</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*" required>
         </div>
-    </main>
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 DGMC. Todos los derechos reservados.</p>
+            <button type="submit">Agregar Producto</button>
+        </form>
+        <table class="tabla-productos" id="tablaProductos">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los productos agregados aparecerán aquí -->
+            </tbody>
+        </table>
         </div>
-    </footer>
+    <script>
+        const form = document.getElementById('formProducto');
+        const tabla = document.getElementById('tablaProductos').querySelector('tbody');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            let categoria = document.getElementById('categoria').value;
+            const categoriaPersonalizada = document.getElementById('categoriaPersonalizada').value;
+            if (categoria === 'Otra') {
+                if (!categoriaPersonalizada.trim()) {
+                    alert('Por favor, escribe la nueva categoría.');
+                    return;
+                }
+                categoria = categoriaPersonalizada.trim();
+            }
+            const precio = document.getElementById('precio').value;
+            const imagenInput = document.getElementById('imagen');
+            const imagenFile = imagenInput.files[0];
+
+            // Si estamos editando, el id estará definido
+            if (form.dataset.editandoId) {
+                const id = form.dataset.editandoId;
+                const formData = new FormData();
+                formData.append('nombre', nombre);
+                formData.append('categoria', categoria);
+                formData.append('precio', precio);
+                // Solo enviar imagen si se seleccionó una nueva
+                if (imagenFile) {
+                    formData.append('imagen', imagenFile.name);
+                }
+                fetch(`http://localhost:5000/api/RegistroProductos/${id}`, {
+                    method: 'PUT',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Actualizar la fila en la tabla
+                        const fila = tabla.querySelector(`tr[data-id='${id}']`);
+                        if (fila) {
+                            fila.children[1].textContent = nombre;
+                            fila.children[2].textContent = categoria;
+                            fila.children[3].textContent = `$${parseFloat(precio).toFixed(2)}`;
+                            if (imagenFile) {
+                                fila.children[0].querySelector('img').src = `img/Productos/${imagenFile.name}`;
+                            }
+                        }
+                        form.reset();
+                        form.querySelector('button[type="submit"]').textContent = 'Agregar Producto';
+                        delete form.dataset.editandoId;
+                        document.getElementById('categoriaPersonalizada').style.display = 'none';
+                    } else {
+                        alert(data.message || 'Error al modificar el producto.');
+                    }
+                })
+                .catch(() => {
+                    alert('Error al conectar con el servidor.');
+                });
+                return;
+            }
+
+            if (!imagenFile) return;
+
+            // Enviar datos al backend como FormData
+            const formData = new FormData();
+            formData.append('nombre', nombre);
+            formData.append('categoria', categoria);
+            formData.append('precio', precio);
+            formData.append('imagen', imagenFile);
+
+            fetch('http://localhost:5000/api/RegistroProductos', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Mostrar el producto en la tabla
+                    const producto = data.producto;
+                    const row = document.createElement('tr');
+                    row.setAttribute('data-id', producto.Id);
+                    row.innerHTML = `
+                        <td><img src="img/Productos/${producto.Imagen}" class="miniatura-img" alt="Imagen producto"></td>
+                        <td>${producto.Nombre}</td>
+                        <td>${producto.Categoria}</td>
+                        <td>$${parseFloat(producto.Precio).toFixed(2)}</td>
+                        <td class="acciones">
+                            <ion-icon name="create-outline" class="editar"></ion-icon>
+                            <ion-icon name="trash-outline" class="eliminar"></ion-icon>
+                        </td>
+                    `;
+                    tabla.appendChild(row);
+                    form.reset();
+                    document.getElementById('categoriaPersonalizada').style.display = 'none';
+                } else {
+                    alert(data.message || 'Error al agregar el producto.');
+                }
+            })
+            .catch(() => {
+                alert('Error al conectar con el servidor.');
+            });
+        });
+
+        // Delegación de eventos para editar y eliminar
+        tabla.addEventListener('click', function(e) {
+            const fila = e.target.closest('tr');
+            if (!fila) return;
+            const id = fila.getAttribute('data-id');
+            // Editar
+            if (e.target.classList.contains('editar')) {
+                document.getElementById('nombre').value = fila.children[1].textContent;
+                document.getElementById('categoria').value = fila.children[2].textContent;
+                document.getElementById('precio').value = parseFloat(fila.children[3].textContent.replace('$',''));
+                // No se puede precargar la imagen por seguridad, pero se puede dejar el input vacío
+                form.querySelector('button[type="submit"]').textContent = 'Modificar Producto';
+                form.dataset.editandoId = id;
+            }
+            // Eliminar
+            if (e.target.classList.contains('eliminar')) {
+                if (confirm('¿Seguro que deseas eliminar este producto?')) {
+                    fetch(`http://localhost:5000/api/RegistroProductos/${id}`, {
+                        method: 'DELETE'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            fila.remove();
+                        } else {
+                            alert(data.message || 'Error al eliminar el producto.');
+                        }
+                    })
+                    .catch(() => {
+                        alert('Error al conectar con el servidor.');
+                    });
+                }
+            }
+        });
+
+        // Mostrar/ocultar campo de categoría personalizada
+        document.getElementById('categoria').addEventListener('change', function() {
+            const catPers = document.getElementById('categoriaPersonalizada');
+            if (this.value === 'Otra') {
+                catPers.style.display = 'block';
+                catPers.required = true;
+            } else {
+                catPers.style.display = 'none';
+                catPers.required = false;
+            }
+        });
+    </script>
 </body>
 </html> 

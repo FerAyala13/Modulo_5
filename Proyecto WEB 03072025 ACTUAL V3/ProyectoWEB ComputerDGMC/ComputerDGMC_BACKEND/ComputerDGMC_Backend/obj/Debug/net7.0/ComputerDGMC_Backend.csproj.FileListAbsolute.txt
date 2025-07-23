@@ -1,8 +1,8 @@
+C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\obj\Debug\net7.0\ComputerDGMC_Backend.csproj.AssemblyReference.cache
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\obj\Debug\net7.0\ComputerDGMC_Backend.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\obj\Debug\net7.0\ComputerDGMC_Backend.AssemblyInfoInputs.cache
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\obj\Debug\net7.0\ComputerDGMC_Backend.AssemblyInfo.cs
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\obj\Debug\net7.0\ComputerDGMC_Backend.csproj.CoreCompileInputs.cache
-C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\obj\Debug\net7.0\ComputerDGMC_Backend.csproj.AssemblyReference.cache
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\obj\Debug\net7.0\ComputerDGMC_Backend.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\bin\Debug\net7.0\ComputerDGMC_Backend.exe
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\bin\Debug\net7.0\ComputerDGMC_Backend.deps.json
@@ -10,11 +10,16 @@ C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\Pro
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\bin\Debug\net7.0\ComputerDGMC_Backend.dll
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\bin\Debug\net7.0\ComputerDGMC_Backend.pdb
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\bin\Debug\net7.0\DnsClient.dll
+C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\bin\Debug\net7.0\MongoDB.Bson.dll
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\bin\Debug\net7.0\MongoDB.Driver.dll
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\bin\Debug\net7.0\SharpCompress.dll
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\bin\Debug\net7.0\Snappier.dll
+C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\bin\Debug\net7.0\ZstdSharp.dll
+C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\obj\Debug\net7.0\ComputerDGMC_Backend.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\obj\Debug\net7.0\staticwebassets\msbuild.ComputerDGMC_Backend.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\obj\Debug\net7.0\staticwebassets\msbuild.build.ComputerDGMC_Backend.props
 C:\Users\Fer Ayala\Documents\GitHub\Modulo_5\Proyecto WEB 03072025 ACTUAL V3\ProyectoWEB ComputerDGMC\ComputerDGMC_BACKEND\ComputerDGMC_Backend\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.ComputerDGMC_Backend.props

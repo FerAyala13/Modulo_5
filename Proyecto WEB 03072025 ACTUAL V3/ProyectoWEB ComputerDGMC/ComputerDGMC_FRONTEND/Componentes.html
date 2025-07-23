@@ -6,9 +6,25 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>DGMC</h1>
+    <header style="background-color: #2f00ff; color: white; padding: 18px 0;">
+        <div style="display: flex; align-items: center; justify-content: space-between; max-width: 1400px; margin: 0 auto;">
+            <div style="display: flex; align-items: center; min-width: 220px;">
+                <span style="font-size: 2.5em; font-weight: bold; letter-spacing: 2px; color: #fff;">Computer DGMC</span>
+            </div>
+            <form id="busquedaForm" style="flex: 1; max-width: 600px; margin: 0 40px; display: flex; align-items: center; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <span style="padding: 0 12px; color: #888; font-size: 1.3em;">
+                    <ion-icon name="search-outline"></ion-icon>
+                </span>
+                <input id="busquedaInput" type="text" placeholder="Buscar productos..." style="flex: 1; border: none; outline: none; font-size: 1.1em; padding: 12px 8px; border-radius: 12px;">
+            </form>
+            <nav style="display: flex; align-items: center; gap: 30px; position: relative;">
+                <a href="Login/login.html" style="color: #fff; font-size: 1.25em; font-weight: 600; text-decoration: none; margin-right: 10px;">Iniciar Sesión</a>
+                <a href="RegistroUsuario.html" style="color: #fff; font-size: 1.25em; font-weight: 600; text-decoration: none; margin-right: 10px;">Registrarse</a>
+                <a href="#" id="carrito-icono" title="Carrito de compra" style="display: flex; align-items: center; color: #fff; position: relative;">
+                    <ion-icon name="cart-outline" style="font-size: 2.2em;"></ion-icon>
+                    <span id="carrito-contador" style="position: absolute; top: -8px; right: -8px; background: #4285f4; color: #fff; border-radius: 50%; font-size: 0.9em; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-weight: bold;">0</span>
+                </a>
+            </nav>
         </div>
     </header>
     <main class="content-wrapper">
@@ -200,5 +216,85 @@
             <p>&copy; 2025 DGMC. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <!-- Mini-carrito HTML -->
+    <div id="mini-carrito" style="display:none; position: absolute; top: 40px; right: 0; background: #fff; color: #222; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.18); min-width: 320px; max-width: 350px; z-index: 9999; padding: 18px 12px 12px 12px;">
+        <div id="mini-carrito-lista"></div>
+        <button id="pagar-btn" style="width: 100%; background: #2f00ff; color: #fff; border: none; border-radius: 8px; padding: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: 12px;">Pagar</button>
+    </div>
+    <script src="Script .js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+    // --- Carrito de compras ---
+    function actualizarContadorCarrito() {
+        const carrito = JSON.parse(localStorage.getItem('carritoDGMC') || '[]');
+        document.getElementById('carrito-contador').textContent = carrito.length;
+    }
+    function renderMiniCarrito() {
+        const carrito = JSON.parse(localStorage.getItem('carritoDGMC') || '[]');
+        const lista = document.getElementById('mini-carrito-lista');
+        if (carrito.length === 0) {
+            lista.innerHTML = '<p style="text-align:center; color:#888;">El carrito está vacío.</p>';
+        } else {
+            lista.innerHTML = carrito.map((prod, idx) => `
+                <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px; position:relative;">
+                    <img src="${prod.imagen}" alt="${prod.nombre}" style="width:48px; height:48px; object-fit:cover; border-radius:8px; border:1px solid #eee;">
+                    <div style="flex:1;">
+                        <div style="font-weight:600;">${prod.nombre}</div>
+                        <div style="color:#2f00ff; font-weight:bold;">$${prod.precio}</div>
+                    </div>
+                    <span class="eliminar-producto" data-idx="${idx}" style="position:absolute; top:4px; right:4px; cursor:pointer; color:#888; font-size:1.3em;">
+                        <ion-icon name="close-outline"></ion-icon>
+                    </span>
+                </div>
+            `).join('');
+        }
+        document.querySelectorAll('.eliminar-producto').forEach(el => {
+            el.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const idx = parseInt(this.getAttribute('data-idx'));
+                const carrito = JSON.parse(localStorage.getItem('carritoDGMC') || '[]');
+                carrito.splice(idx, 1);
+                localStorage.setItem('carritoDGMC', JSON.stringify(carrito));
+                renderMiniCarrito();
+                actualizarContadorCarrito();
+            });
+        });
+    }
+    document.getElementById('carrito-icono').addEventListener('click', function(e) {
+        e.preventDefault();
+        const mini = document.getElementById('mini-carrito');
+        if (mini.style.display === 'none' || mini.style.display === '') {
+            renderMiniCarrito();
+            mini.style.display = 'block';
+        } else {
+            mini.style.display = 'none';
+        }
+    });
+    document.addEventListener('click', function(e) {
+        const mini = document.getElementById('mini-carrito');
+        const icono = document.getElementById('carrito-icono');
+        if (!mini.contains(e.target) && !icono.contains(e.target)) {
+            mini.style.display = 'none';
+        }
+    });
+    document.getElementById('pagar-btn').addEventListener('click', function() {
+        window.location.href = 'Pago.html';
+    });
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('btn') && e.target.textContent.includes('Agregar al carrito')) {
+            const productDiv = e.target.closest('.product');
+            if (!productDiv) return;
+            const nombre = productDiv.querySelector('p').textContent;
+            const precio = productDiv.querySelector('.price') ? productDiv.querySelector('.price').textContent.replace('$','').trim() : '0.00';
+            const imagen = productDiv.querySelector('img') ? productDiv.querySelector('img').getAttribute('src') : '';
+            const carrito = JSON.parse(localStorage.getItem('carritoDGMC') || '[]');
+            carrito.push({ nombre, precio, imagen });
+            localStorage.setItem('carritoDGMC', JSON.stringify(carrito));
+            actualizarContadorCarrito();
+        }
+    });
+    actualizarContadorCarrito();
+    </script>
 </body>
 </html> 
