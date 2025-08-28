@@ -18,6 +18,13 @@ namespace ComputerDGMC_Backend
             _productos = conexion.GetCollection<RegistroProducto>("Registro_Productos");
         }
 
+        [HttpGet]
+        public IActionResult ObtenerProductos()
+        {
+            var productos = _productos.Find(_ => true).ToList();
+            return Ok(new { success = true, productos });
+        }
+
         [HttpPost]
         [RequestSizeLimit(10_000_000)] // Limitar tamaño de archivos a 10MB
         public IActionResult AgregarProducto([FromForm] string nombre, [FromForm] string categoria, [FromForm] decimal precio, [FromForm] IFormFile imagen)
@@ -67,10 +74,13 @@ namespace ComputerDGMC_Backend
                 .Set(p => p.Nombre, nombre)
                 .Set(p => p.Categoria, categoria)
                 .Set(p => p.Precio, precio);
-            if (!string.IsNullOrEmpty(imagen))
+            
+            // Solo actualizar la imagen si se proporciona una nueva
+            if (!string.IsNullOrEmpty(imagen) && imagen.Trim() != "")
             {
                 update = update.Set(p => p.Imagen, imagen);
             }
+            
             var resultado = _productos.UpdateOne(p => p.Id == id, update);
             if (resultado.MatchedCount == 0)
                 return NotFound(new { success = false, message = "Producto no encontrado" });

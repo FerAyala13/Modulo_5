@@ -1,10 +1,25 @@
-﻿/* Estilos generales */
+﻿/* VARIABLES DE COLORES - ESQUEMA UNIFICADO */
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(45deg, #2f00ff, #4285f4);
+    --primary-color: #2f00ff;
+    --secondary-color: #667eea;
+    --accent-color: #764ba2;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --background-light: #f8f9fa;
+    --shadow-light: rgba(0,0,0,0.1);
+    --shadow-medium: rgba(0,0,0,0.2);
+    --shadow-heavy: rgba(0,0,0,0.3);
+}
+
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Blanco muy claro */
-    color: #333; /* Gris oscuro para texto */
+    background-color: var(--background-light);
+    color: var(--text-dark);
 }
 
 .container {
@@ -16,9 +31,13 @@ body {
 
 /* Encabezado */
 header {
-    background-color: #2f00ff; /* Azul */
-    color: white;
+    background: #667eea; /* Púrpura sólido como en la imagen */
+    color: var(--text-light);
     padding: 10px 0;
+    box-shadow: 0 2px 8px var(--shadow-medium);
+    height: auto;
+    display: flex;
+    align-items: center;
 }
 
     header h1 {
@@ -30,6 +49,61 @@ header {
     header nav {
         float: left;
         margin-left: 20px;
+    }
+
+    /* Estilos para el header como en la imagen */
+    .main-header {
+        background: #667eea !important; /* Púrpura sólido */
+        height: auto !important;
+        padding: 10px 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        box-shadow: 0 2px 8px var(--shadow-medium) !important;
+    }
+
+    .main-header > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Estilos para el logo/título dentro del header */
+    .main-header span {
+        font-size: 2.5em !important;
+        font-weight: bold !important;
+        letter-spacing: 2px !important;
+        color: #fff !important;
+    }
+
+    /* Estilos para la barra de búsqueda */
+    .main-header form {
+        flex: 1;
+        max-width: 600px;
+        margin: 0 40px;
+        display: flex;
+        align-items: center;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    /* Estilos para los enlaces de navegación */
+    .main-header nav a {
+        color: #fff !important;
+        font-size: 1.25em !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        margin-right: 10px !important;
+    }
+
+    /* Estilos para el carrito */
+    .main-header nav ion-icon {
+        color: #fff !important;
+        font-size: 2.2em !important;
     }
 
         header nav ul {
@@ -78,25 +152,91 @@ header::after,
 }
 
 .sidebar {
-    width: 250px;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 280px;
+    background: var(--primary-gradient);
+    padding: 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-heavy);
+    overflow: hidden;
 }
 
     .sidebar h3 {
-        color: #2f00ff; /* Azul */
+        color: var(--text-light);
         margin-top: 0;
         margin-bottom: 20px;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
         padding-bottom: 10px;
+        text-shadow: 1px 1px 2px var(--shadow-heavy);
     }
 
     .sidebar .category-list {
         list-style: none;
         padding: 0;
     }
+
+/* BOTONES Y ELEMENTOS INTERACTIVOS */
+.btn {
+    background: var(--primary-gradient);
+    color: var(--text-light);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow-medium);
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--shadow-heavy);
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.2);
+    color: var(--text-light);
+    border: 2px solid rgba(255,255,255,0.3);
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* TARJETAS Y SECCIONES */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px var(--shadow-light);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 25px var(--shadow-medium);
+}
+
+.section-header {
+    background: #ffffff;
+    color: var(--text-dark);
+    padding: 40px 0;
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 0;
+}
 
         .sidebar .category-list li {
             margin-bottom: 5px;

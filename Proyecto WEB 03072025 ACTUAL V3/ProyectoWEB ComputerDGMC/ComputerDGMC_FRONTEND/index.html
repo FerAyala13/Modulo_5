@@ -38,39 +38,116 @@
 
     <main class="content-wrapper">
         <aside class="sidebar">
-            <!-- LOGO-->
-
-            <div class="imagen-logo">
-            <img src="img/logo.jpg" alt="Logo" />
+            <!-- LOGO MEJORADO -->
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="img/logo.jpg" alt="Logo DGMC" class="sidebar-logo" />
+                    <h2 class="logo-text">Computer DGMC</h2>
+                </div>
             </div>
-            <h3>Categorías</h3>
-            <ul class="category-list">
-                <li><a href="Accesorios.html">Accesorios</a></li>
-                <li><a href="Componentes.html">Componentes</a></li>
-                <li><a href="Computadoras.html">Computadoras</a></li>
-                <li><a href="Gaming.html">Gaming</a></li>
-                <li><a href="LoNuevo.html">Lo nuevo</a></li>
-                <li><a href="Ofertas.html">Ofertas</a></li>
-            </ul>
+            
+            <!-- CATEGORÍAS MEJORADAS -->
+            <div class="categories-section">
+                <h3 class="categories-title">Categorías</h3>
+                <ul class="category-list">
+                    <li><a href="Accesorios.html">
+                        <ion-icon name="headset-outline"></ion-icon>
+                        <span>Accesorios</span>
+                    </a></li>
+                    <li><a href="Componentes.html">
+                        <ion-icon name="hardware-chip-outline"></ion-icon>
+                        <span>Componentes</span>
+                    </a></li>
+                    <li><a href="Computadoras.html">
+                        <ion-icon name="laptop-outline"></ion-icon>
+                        <span>Computadoras</span>
+                    </a></li>
+                    <li><a href="Gaming.html">
+                        <ion-icon name="game-controller-outline"></ion-icon>
+                        <span>Gaming</span>
+                    </a></li>
+                    <li><a href="LoNuevo.html">
+                        <ion-icon name="sparkles-outline"></ion-icon>
+                        <span>Lo nuevo</span>
+                    </a></li>
+                    <li><a href="Ofertas.html">
+                        <ion-icon name="pricetag-outline"></ion-icon>
+                        <span>Ofertas</span>
+                    </a></li>
+                </ul>
+            </div>
         </aside>
 
         <div class="main-content">
             <section class="hero">
                 <div class="container">
-                    <h2>Explora lo último en tecnología</h2>
-                    <p>Descubre los mejores productos para tus necesidades.</p>
-                    <!-- Pasarela de productos (slider) -->
-                    <div class="product-carousel-container container">
-                      <div class="product-carousel">
-                        <img src="img/Cases/G1.jpg" alt="Gabinete APNX C1">
-                        <img src="img/Laptops/Laptop1.jpg" alt="Laptop HP 245 G10">
-                        <img src="img/Auriculares G/Headset1.png" alt="Headset Razer Blackshark">
-                        <img src="img/PlayStation 5.png" alt="PlayStation 5">
-                        <img src="img/Tarjeta Video/TDV1.png" alt="Tarjeta de Video Asus Dual RTX 5060 Ti">
-                        <img src="img/Memorias Ram/MR1.png" alt="Memoria RAM Adata Premier">
-                      </div>
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1 class="hero-title">¡Revolucioná tu vida con nuestros productos de última tecnología!</h1>
+                            <p class="hero-subtitle">Descubre la mejor selección de computadoras, componentes, gaming y accesorios. Calidad garantizada y precios increíbles.</p>
+                            <div class="hero-buttons">
+                                <a href="Productos.html" class="btn btn-primary">Explorar Productos</a>
+                                <a href="Ofertas.html" class="btn btn-secondary">Ver Ofertas</a>
+                            </div>
+                            <div class="hero-features">
+                                <div class="feature">
+                                    <ion-icon name="checkmark-circle"></ion-icon>
+                                    <span>Envío Gratis</span>
+                                </div>
+                                <div class="feature">
+                                    <ion-icon name="shield-checkmark"></ion-icon>
+                                    <span>Garantía Oficial</span>
+                                </div>
+                                <div class="feature">
+                                    <ion-icon name="card"></ion-icon>
+                                    <span>Pago Seguro</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-visual">
+                            <!-- SLIDER DE PRODUCTOS RESTAURADO -->
+                            <div class="hero-slider-container">
+                                <div class="hero-slider">
+                                    <div class="slide">
+                                        <img src="img/Laptops/Laptop1.jpg" alt="Laptop HP 245 G10">
+                                        <div class="slide-overlay">
+                                            <h4>Laptop HP 245 G10</h4>
+                                            <p>Rendimiento excepcional</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="img/PlayStation 5.png" alt="PlayStation 5">
+                                        <div class="slide-overlay">
+                                            <h4>PlayStation 5</h4>
+                                            <p>La nueva generación</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="img/Auriculares G/Headset1.png" alt="Headset Razer Blackshark">
+                                        <div class="slide-overlay">
+                                            <h4>Headset Razer</h4>
+                                            <p>Audio profesional</p>
+                                        </div>
+                                    </div>
+                                    <div class="slide">
+                                        <img src="img/Tarjeta Video/TDV1.png" alt="Tarjeta de Video RTX">
+                                        <div class="slide-overlay">
+                                            <h4>RTX 5060 Ti</h4>
+                                            <p>Gráficos potentes</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-controls">
+                                    <button class="slider-btn prev-btn">
+                                        <ion-icon name="chevron-back"></ion-icon>
+                                    </button>
+                                    <button class="slider-btn next-btn">
+                                        <ion-icon name="chevron-forward"></ion-icon>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <a href="Productos.html" class="btn">Ver Productos</a>
                 </div>
                 <section class="video-section">
   <div class="container">
@@ -89,17 +166,23 @@
               <div class="container">
                 <h3>Productos Destacados</h3>
                 <div class="product-grid">
-                  <div class="product">
-                    <img src="img/Laptop asus e1504ga-wb31 intel core i3 n305, 8gb ddr4, ssd 128gb pantalla fhd 15.6p w11hs black kb us.jpg" alt="Laptop Gaming RGB">
-                    <p>Laptop Asus e1504ga-wb31</p>
+                  <div class="product-placeholder">
+                    <div class="placeholder-icon">
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                    <p>Productos Premium</p>
                   </div>
-                  <div class="product">
-                    <img src="img/image.png" alt="Consola Pro Max">
-                    <p>PlayStation 5</p>
+                  <div class="product-placeholder">
+                    <div class="placeholder-icon">
+                      <ion-icon name="flash"></ion-icon>
+                    </div>
+                    <p>Últimas Novedades</p>
                   </div>
-                  <div class="product">
-                    <img src="img/adaptador.jpg" alt="Adaptador USB-C">
-                    <p>Adaptador USB-C</p>
+                  <div class="product-placeholder">
+                    <div class="placeholder-icon">
+                      <ion-icon name="trending-up"></ion-icon>
+                    </div>
+                    <p>Más Vendidos</p>
                   </div>
                 </div>
               </div>
@@ -110,75 +193,456 @@
 
         
     </main>
-    <!-- IMAGENES EN MOVIMIE------------------- -->
-
-         <div class="slider-container">
-  <div class="slider">
-    <img src="img/ofertas1.jpg" alt="Imagen 1">
-    <img src="img/Ofertas2.jpg" alt="Imagen 2">
-    <img src="img/Ofertas3.jpg" alt="Imagen 3">
-    <img src="img/Ofertas4.jpg" alt="Imagen 4">
-  </div>
-<div class="banner-container">
-  <div class="banner-text">
-    <span id="mensaje-dinamico"></span>
-  </div>
-</div>
-
-</div>
+    <!-- SECCIÓN DE OFERTAS ESTÁTICA -->
+    <section class="ofertas-destacadas">
+      <div class="container">
+        <h2 class="section-title">Ofertas Destacadas</h2>
+        <div class="ofertas-grid">
+          <div class="oferta-card">
+            <img src="img/ofertas1.jpg" alt="Oferta Especial">
+            <div class="oferta-content">
+              <h3>Descuentos Especiales</h3>
+              <p>Hasta 50% de descuento en componentes</p>
+            </div>
+          </div>
+          <div class="oferta-card">
+            <img src="img/Ofertas2.jpg" alt="Oferta Gaming">
+            <div class="oferta-content">
+              <h3>Gaming Collection</h3>
+              <p>Productos gaming con precios increíbles</p>
+            </div>
+          </div>
+          <div class="oferta-card">
+            <img src="img/Ofertas3.jpg" alt="Oferta Laptops">
+            <div class="oferta-content">
+              <h3>Laptops Premium</h3>
+              <p>Las mejores laptops al mejor precio</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="ver-productos-btn-container">
       <a href="Productos.html" class="btn">Ver Productos</a>
     </div>
+
+    <!-- NUEVAS SECCIONES PARA LLENAR ESPACIOS -->
+    
+    <!-- Sección de Categorías Destacadas -->
+    <section class="categorias-destacadas">
+      <div class="container">
+        <h2 class="section-title">Categorías Destacadas</h2>
+        <div class="categorias-grid">
+          <div class="categoria-card" onclick="window.location.href='Computadoras.html'">
+            <div class="categoria-icon">
+              <ion-icon name="laptop-outline"></ion-icon>
+            </div>
+            <h3>Computadoras</h3>
+            <p>Laptops y PCs de escritorio</p>
+            <div class="categoria-overlay">
+              <span>Ver más</span>
+            </div>
+          </div>
+          <div class="categoria-card" onclick="window.location.href='Componentes.html'">
+            <div class="categoria-icon">
+              <ion-icon name="hardware-chip-outline"></ion-icon>
+            </div>
+            <h3>Componentes</h3>
+            <p>Procesadores, tarjetas gráficas y más</p>
+            <div class="categoria-overlay">
+              <span>Ver más</span>
+            </div>
+          </div>
+          <div class="categoria-card" onclick="window.location.href='Gaming.html'">
+            <div class="categoria-icon">
+              <ion-icon name="game-controller-outline"></ion-icon>
+            </div>
+            <h3>Gaming</h3>
+            <p>Consolas y accesorios gaming</p>
+            <div class="categoria-overlay">
+              <span>Ver más</span>
+            </div>
+          </div>
+          <div class="categoria-card" onclick="window.location.href='Accesorios.html'">
+            <div class="categoria-icon">
+              <ion-icon name="headset-outline"></ion-icon>
+            </div>
+            <h3>Accesorios</h3>
+            <p>Todo lo que necesitas</p>
+            <div class="categoria-overlay">
+              <span>Ver más</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Estadísticas -->
+    <section class="estadisticas">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number" data-target="5000">0</div>
+            <div class="stat-label">Productos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="10000">0</div>
+            <div class="stat-label">Clientes Satisfechos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="50">0</div>
+            <div class="stat-label">Marcas</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-target="24">0</div>
+            <div class="stat-label">Horas de Soporte</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section class="testimonios">
+      <div class="container">
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <div class="testimonios-slider">
+          <div class="testimonio">
+            <div class="testimonio-content">
+              <div class="stars">★★★★★</div>
+              <p>"Excelente servicio y productos de calidad. Mi laptop funciona perfectamente."</p>
+              <div class="testimonio-autor">
+                <img src="img/logo.jpg" alt="Cliente" class="autor-avatar">
+                <div>
+                  <h4>Carlos Rodríguez</h4>
+                  <span>Cliente Frecuente</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonio">
+            <div class="testimonio-content">
+              <div class="stars">★★★★★</div>
+              <p>"Los mejores precios del mercado y entrega rápida. Muy recomendado."</p>
+              <div class="testimonio-autor">
+                <img src="img/logo.jpg" alt="Cliente" class="autor-avatar">
+                <div>
+                  <h4>María González</h4>
+                  <span>Cliente Satisfecha</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonio">
+            <div class="testimonio-content">
+              <div class="stars">★★★★★</div>
+              <p>"Atención al cliente excepcional. Me ayudaron a elegir la mejor opción."</p>
+              <div class="testimonio-autor">
+                <img src="img/logo.jpg" alt="Cliente" class="autor-avatar">
+                <div>
+                  <h4>Luis Pérez</h4>
+                  <span>Cliente Nuevo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Newsletter -->
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2>¡Mantente actualizado!</h2>
+          <p>Suscríbete para recibir las mejores ofertas y novedades tecnológicas</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Tu correo electrónico" required>
+            <button type="submit">Suscribirse</button>
+          </form>
+        </div>
+      </div>
+    </section>
     <style>
-      .product-carousel-container {
-        width: 100%;
+      /* HERO SECTION MEJORADO */
+      .hero {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        position: relative;
         overflow: hidden;
-        margin: 40px 0 20px 0;
+      }
+      
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        pointer-events: none;
+      }
+      
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+      
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
+      
+      .hero-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+      
+      .hero-buttons {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+      
+      .btn-primary {
+        background: #2f00ff;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(47, 0, 255, 0.3);
+      }
+      
+      .btn-primary:hover {
+        background: #1a00cc;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(47, 0, 255, 0.4);
+      }
+      
+      .btn-secondary {
+        background: rgba(255,255,255,0.2);
+        color: white;
+        padding: 15px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid rgba(255,255,255,0.3);
+      }
+      
+      .btn-secondary:hover {
+        background: rgba(255,255,255,0.3);
+        transform: translateY(-2px);
+      }
+      
+      .hero-features {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+      
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1rem;
+        opacity: 0.9;
+      }
+      
+      .feature ion-icon {
+        font-size: 1.2rem;
+        color: #4ade80;
+      }
+      
+      .hero-visual {
         display: flex;
         justify-content: center;
+        align-items: center;
       }
-      .product-carousel {
+      
+      /* SLIDER DE PRODUCTOS EN HERO */
+      .hero-slider-container {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      }
+      
+      .hero-slider {
         display: flex;
-        gap: 40px;
-        animation: carousel-move 18s linear infinite;
+        width: 400%;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
       }
-      .product-carousel img {
-        width: 180px;
-        height: 180px;
-        object-fit: contain;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-        background: #fff;
-        padding: 10px;
+      
+      .slide {
+        position: relative;
+        width: 25%;
+        height: 100%;
+        overflow: hidden;
       }
-      @keyframes carousel-move {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+      
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
       }
+      
+      .slide:hover img {
+        transform: scale(1.05);
+      }
+      
+      .slide-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        color: white;
+        padding: 30px 20px 20px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+      
+      .slide:hover .slide-overlay {
+        transform: translateY(0);
+      }
+      
+      .slide-overlay h4 {
+        font-size: 1.5rem;
+        margin: 0 0 8px 0;
+        font-weight: 600;
+      }
+      
+      .slide-overlay p {
+        font-size: 1rem;
+        margin: 0;
+        opacity: 0.9;
+      }
+      
+      /* CONTROLES DEL SLIDER */
+      .slider-controls {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        pointer-events: none;
+      }
+      
+      .slider-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.9);
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: #333;
+        transition: all 0.3s ease;
+        pointer-events: all;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      }
+      
+      .slider-btn:hover {
+        background: white;
+        transform: scale(1.1);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      }
+      /* SECCIÓN DE OFERTAS DESTACADAS */
+      .ofertas-destacadas {
+        padding: 80px 0;
+        background: #f8f9fa;
+      }
+      
+      .ofertas-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+      
+      .oferta-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      
+      .oferta-card:hover {
+        /* transform: translateY(-10px); */
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      }
+      
+      .oferta-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      
+      .oferta-content {
+        padding: 25px;
+        text-align: center;
+      }
+      
+      .oferta-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #333;
+        font-weight: 600;
+      }
+      
+      .oferta-content p {
+        color: #666;
+        line-height: 1.6;
+      }
+      
       .ver-productos-btn-container {
         display: flex;
         justify-content: center;
         margin-bottom: 30px;
       }
       
-      /* Estilos para mover la barra lateral más a la izquierda */
+      /* SIDEBAR MEJORADA */
       .content-wrapper {
         display: flex;
-        max-width: none; /* Quitar la limitación de ancho */
+        max-width: none;
         margin: 20px auto;
-        gap: 5px; /* Reducir el gap entre sidebar y contenido */
-        padding-left: 0; /* Eliminar padding izquierdo */
+        gap: 20px;
+        padding-left: 0;
       }
       
       .sidebar {
-        width: 850px; /* Hacer la barra lateral más ancha */
-        background-color: white;
-        padding: 15px; /* Reducir el padding */
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        margin-left: 0; /* Pegar completamente a la izquierda */
+        width: 280px; /* Sidebar más estrecha */
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 0;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        margin-left: 0;
         position: relative;
-        left: -50px; /* Ajustar para que sea visible pero pegada */
+        overflow: hidden;
       }
       
       .main-content {
@@ -187,21 +651,52 @@
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        margin-right: 10px; /* Agregar margen derecho */
+        margin-right: 10px;
       }
       
-      .imagen-logo img {
-        width: 100%;
-        max-width: 120px; /* Reducir el tamaño del logo */
-        height: auto;
-        border-radius: 50%;
-      }
-      
-      .sidebar h3 {
-        font-size: 1.3em; /* Aumentar el tamaño del título */
-        margin-bottom: 20px;
-        color: #2f00ff; /* Color azul para el título */
+      /* HEADER DE LA SIDEBAR */
+      .sidebar-header {
+        background: rgba(255,255,255,0.1);
+        padding: 25px 20px;
         text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+      }
+      
+      .logo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .sidebar-logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 3px solid rgba(255,255,255,0.3);
+        object-fit: cover;
+      }
+      
+      .logo-text {
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 0;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      }
+      
+      /* SECCIÓN DE CATEGORÍAS */
+      .categories-section {
+        padding: 25px 20px;
+      }
+      
+      .categories-title {
+        font-size: 1.4rem;
+        margin-bottom: 25px;
+        color: white;
+        text-align: center;
+        font-weight: 600;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
       }
       
       .category-list {
@@ -211,32 +706,429 @@
       }
       
       .category-list li {
-        margin-bottom: 15px; /* Aumentar el espacio entre categorías */
-        text-align: center;
+        margin-bottom: 12px;
       }
       
       .category-list li a {
-        font-size: 1.2em; /* Aumentar el tamaño de la fuente */
-        padding: 12px 20px; /* Aumentar el padding */
-        display: block; /* Asegurar que se muestre como bloque */
-        color: #333; /* Color del texto */
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1rem;
+        padding: 15px 18px;
+        color: white;
         text-decoration: none;
-        background-color: #f8f9fa; /* Fondo claro */
-        border-radius: 8px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 12px;
         transition: all 0.3s ease;
-        border: 2px solid transparent;
+        border: 1px solid rgba(255,255,255,0.2);
+        backdrop-filter: blur(10px);
       }
       
       .category-list li a:hover {
-        color: #2f00ff;
-        background-color: #e9ecef;
-        border-color: #2f00ff;
-        transform: translateX(10px);
+        background: rgba(255,255,255,0.2);
+        transform: translateX(8px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      }
+      
+      .category-list li a ion-icon {
+        font-size: 1.3rem;
+        color: #fff;
+      }
+      
+      .category-list li a span {
+        font-weight: 500;
       }
       header nav ul li a, .login-section nav ul li a {
         font-size: 1.25em;
         font-weight: 600;
         letter-spacing: 0.5px;
+      }
+
+      /* NUEVOS ESTILOS PARA LAS SECCIONES */
+      
+      /* Sección de Categorías Destacadas */
+      .categorias-destacadas {
+        padding: 60px 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+      
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
+      
+      .categorias-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+      
+      .categoria-card {
+        background: rgba(255,255,255,0.1);
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.2);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .categoria-card:hover {
+        /* transform: translateY(-10px); */
+        background: rgba(255,255,255,0.2);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      }
+      
+      .categoria-icon {
+        font-size: 4rem;
+        margin-bottom: 20px;
+        color: #fff;
+      }
+      
+      .categoria-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+      
+      .categoria-card p {
+        opacity: 0.9;
+        font-size: 1rem;
+      }
+      
+      .categoria-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(47, 0, 255, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 20px;
+      }
+      
+      .categoria-card:hover .categoria-overlay {
+        opacity: 1;
+      }
+      
+      .categoria-overlay span {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: white;
+      }
+
+      /* Sección de Estadísticas */
+      .estadisticas {
+        padding: 80px 0;
+        background: linear-gradient(45deg, #2f00ff, #4285f4);
+        color: white;
+      }
+      
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        text-align: center;
+      }
+      
+      .stat-item {
+        padding: 20px;
+      }
+      
+      .stat-number {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
+      
+      .stat-label {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        font-weight: 500;
+      }
+
+      /* Sección de Testimonios */
+      .testimonios {
+        padding: 80px 0;
+        background: #f8f9fa;
+      }
+      
+      .testimonios-slider {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+      
+      .testimonio {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+      }
+      
+      .testimonio:hover {
+        /* transform: translateY(-5px); */
+      }
+      
+      .testimonio-content {
+        text-align: center;
+      }
+      
+      .stars {
+        color: #ffd700;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+      
+      .testimonio-content p {
+        font-style: italic;
+        margin-bottom: 20px;
+        color: #666;
+        line-height: 1.6;
+      }
+      
+      .testimonio-autor {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+      
+      .autor-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      
+      .testimonio-autor h4 {
+        margin: 0;
+        color: #333;
+        font-weight: 600;
+      }
+      
+      .testimonio-autor span {
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      /* Sección Newsletter */
+      .newsletter {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+      }
+      
+      .newsletter-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+      
+      .newsletter-content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+      }
+      
+      .newsletter-form {
+        display: flex;
+        max-width: 500px;
+        margin: 0 auto;
+        gap: 15px;
+      }
+      
+      .newsletter-form input {
+        flex: 1;
+        padding: 15px 20px;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        outline: none;
+      }
+      
+      .newsletter-form button {
+        padding: 15px 30px;
+        background: #2f00ff;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      
+      .newsletter-form button:hover {
+        background: #1a00cc;
+      }
+
+      /* PRODUCTOS DESTACADOS - PLACEHOLDERS */
+      .product-placeholder {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        color: white;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .product-placeholder::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255,255,255,0.1);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .product-placeholder:hover::before {
+        opacity: 1;
+      }
+      
+      .product-placeholder:hover {
+        /* transform: translateY(-5px); */
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      }
+      
+      .placeholder-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        color: #fff;
+        position: relative;
+        z-index: 2;
+      }
+      
+      .product-placeholder p {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: 0;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Animaciones */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+      
+      .categoria-card, .testimonio, .stat-item {
+        /* animation: fadeInUp 0.6s ease forwards; */
+      }
+      
+      /* .categoria-card:nth-child(1) { animation-delay: 0.1s; }
+      .categoria-card:nth-child(2) { animation-delay: 0.2s; }
+      .categoria-card:nth-child(3) { animation-delay: 0.3s; }
+      .categoria-card:nth-child(4) { animation-delay: 0.4s; } */
+      
+      .stat-item:hover .stat-number {
+        animation: pulse 0.5s ease;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-content {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          text-align: center;
+        }
+        
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        
+        .hero-buttons {
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+        
+        .hero-features {
+          justify-content: center;
+        }
+        
+        .sidebar {
+          width: 250px;
+        }
+        
+        .hero-slider-container {
+          height: 300px;
+        }
+        
+        .slider-btn {
+          width: 40px;
+          height: 40px;
+          font-size: 1.2rem;
+        }
+        
+        .ofertas-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        
+        .categorias-grid {
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 20px;
+        }
+        
+        .stats-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+        
+        .testimonios-slider {
+          grid-template-columns: 1fr;
+        }
+        
+        .newsletter-form {
+          flex-direction: column;
+        }
+        
+        .section-title {
+          font-size: 2rem;
+        }
+        
+        .stat-number {
+          font-size: 2.5rem;
+        }
       }
     </style>
     <footer>
@@ -412,6 +1304,109 @@
     });
     // Inicializar contador al cargar
     actualizarContadorCarrito();
+
+    // ANIMACIÓN DE CONTADORES
+    function animateCounter(element, target) {
+        let current = 0;
+        const increment = target / 100;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(current);
+        }, 20);
+    }
+
+    // OBSERVADOR DE INTERSECCIÓN PARA ANIMACIONES
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = entry.target.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.getAttribute('data-target'));
+                    animateCounter(stat, target);
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Observar la sección de estadísticas
+    document.addEventListener('DOMContentLoaded', function() {
+        const statsSection = document.querySelector('.estadisticas');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    });
+
+    // FUNCIONALIDAD DEL NEWSLETTER
+    document.addEventListener('DOMContentLoaded', function() {
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                if (email) {
+                    alert('¡Gracias por suscribirte! Te mantendremos informado sobre las mejores ofertas.');
+                    this.reset();
+                }
+            });
+        }
+    });
+
+    // ANIMACIÓN DE SCROLL SUAVE
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // EFECTO PARALLAX EN EL HERO - DESACTIVADO
+    // window.addEventListener('scroll', function() {
+    //     const scrolled = window.pageYOffset;
+    //     const hero = document.querySelector('.hero');
+    //     if (hero) {
+    //         hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+    //     }
+    // });
+
+    // FUNCIONALIDAD DEL SLIDER
+    document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.querySelector('.hero-slider');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentSlide = 0;
+        const totalSlides = 4;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 25}%)`;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+        // Auto-slide cada 5 segundos
+        setInterval(nextSlide, 5000);
+    });
     </script>
 </body>
 </html>  

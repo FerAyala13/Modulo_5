@@ -114,6 +114,19 @@
             border: 1px solid #2a3a4d;
             background: #fff;
         }
+        
+        .tabla-vacia {
+            text-align: center;
+            color: #95a5a6;
+            font-style: italic;
+            padding: 40px 20px;
+        }
+        
+        .loading {
+            text-align: center;
+            color: #3498db;
+            padding: 20px;
+        }
         @media (max-width: 900px) {
             .registro-productos-container {
                 padding: 12px 2vw;
@@ -128,7 +141,13 @@
 </head>
 <body>
     <div class="registro-productos-container">
-        <h1>Registro de Productos</h1>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <h1>Registro de Productos</h1>
+            <button type="button" onclick="cargarProductos()" style="background: #3498db; color: #fff; border: none; border-radius: 8px; padding: 10px 20px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">
+                <ion-icon name="refresh-outline" style="margin-right: 8px;"></ion-icon>
+                Recargar Productos
+            </button>
+        </div>
         <form class="form-producto" id="formProducto">
             <div>
                 <label for="nombre">Nombre</label>
@@ -153,6 +172,7 @@
             <div>
                 <label for="imagen">Imagen</label>
                 <input type="file" id="imagen" name="imagen" accept="image/*" required>
+                <small style="color: #95a5a6; font-size: 0.8em;">*Opcional al editar</small>
         </div>
             <button type="submit">Agregar Producto</button>
         </form>
@@ -174,6 +194,53 @@
     <script>
         const form = document.getElementById('formProducto');
         const tabla = document.getElementById('tablaProductos').querySelector('tbody');
+
+        // Función para cargar productos desde el backend
+        function cargarProductos() {
+            // Mostrar estado de carga
+            tabla.innerHTML = '<tr><td colspan="5" class="loading">Cargando productos...</td></tr>';
+            
+            fetch('http://localhost:5000/api/RegistroProductos')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        tabla.innerHTML = ''; // Limpiar tabla
+                        
+                        if (data.productos.length === 0) {
+                            tabla.innerHTML = '<tr><td colspan="5" class="tabla-vacia">No hay productos registrados. ¡Agrega el primero!</td></tr>';
+                            return;
+                        }
+                        
+                        data.productos.forEach(producto => {
+                            const row = document.createElement('tr');
+                            row.setAttribute('data-id', producto.id);
+                            row.innerHTML = `
+                                <td><img src="img/Productos/${producto.imagen}" class="miniatura-img" alt="Imagen producto" onerror="this.src='img/logo.jpg'"></td>
+                                <td>${producto.nombre}</td>
+                                <td>${producto.categoria}</td>
+                                <td>$${parseFloat(producto.precio).toFixed(2)}</td>
+                                <td class="acciones">
+                                    <ion-icon name="create-outline" class="editar" title="Editar"></ion-icon>
+                                    <ion-icon name="trash-outline" class="eliminar" title="Eliminar"></ion-icon>
+                                </td>
+                            `;
+                            tabla.appendChild(row);
+                        });
+                    } else {
+                        console.error('Error al cargar productos:', data.message);
+                        tabla.innerHTML = '<tr><td colspan="5" style="text-align: center; color: #e74c3c;">Error al cargar productos: ' + data.message + '</td></tr>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error de conexión:', error);
+                    tabla.innerHTML = '<tr><td colspan="5" style="text-align: center; color: #e74c3c;">Error al cargar productos. Verifica que el backend esté ejecutándose en http://localhost:5000</td></tr>';
+                });
+        }
+
+        // Cargar productos al iniciar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            cargarProductos();
+        });
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -201,6 +268,9 @@
                 // Solo enviar imagen si se seleccionó una nueva
                 if (imagenFile) {
                     formData.append('imagen', imagenFile.name);
+                } else {
+                    // Si no hay imagen nueva, enviar cadena vacía para mantener la imagen actual
+                    formData.append('imagen', '');
                 }
                 fetch(`http://localhost:5000/api/RegistroProductos/${id}`, {
                     method: 'PUT',
@@ -209,20 +279,14 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        // Actualizar la fila en la tabla
-                        const fila = tabla.querySelector(`tr[data-id='${id}']`);
-                        if (fila) {
-                            fila.children[1].textContent = nombre;
-                            fila.children[2].textContent = categoria;
-                            fila.children[3].textContent = `$${parseFloat(precio).toFixed(2)}`;
-                            if (imagenFile) {
-                                fila.children[0].querySelector('img').src = `img/Productos/${imagenFile.name}`;
-                            }
-                        }
+                        // La tabla se actualizará automáticamente con cargarProductos()
+                        cargarProductos();
                         form.reset();
                         form.querySelector('button[type="submit"]').textContent = 'Agregar Producto';
                         delete form.dataset.editandoId;
                         document.getElementById('categoriaPersonalizada').style.display = 'none';
+                        document.getElementById('imagen').required = true; // Restaurar como requerido
+                        alert('Producto modificado exitosamente');
                     } else {
                         alert(data.message || 'Error al modificar el producto.');
                     }
@@ -249,23 +313,11 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    // Mostrar el producto en la tabla
-                    const producto = data.producto;
-                    const row = document.createElement('tr');
-                    row.setAttribute('data-id', producto.Id);
-                    row.innerHTML = `
-                        <td><img src="img/Productos/${producto.Imagen}" class="miniatura-img" alt="Imagen producto"></td>
-                        <td>${producto.Nombre}</td>
-                        <td>${producto.Categoria}</td>
-                        <td>$${parseFloat(producto.Precio).toFixed(2)}</td>
-                        <td class="acciones">
-                            <ion-icon name="create-outline" class="editar"></ion-icon>
-                            <ion-icon name="trash-outline" class="eliminar"></ion-icon>
-                        </td>
-                    `;
-                    tabla.appendChild(row);
+                    // Recargar toda la tabla para mostrar el nuevo producto
+                    cargarProductos();
                     form.reset();
                     document.getElementById('categoriaPersonalizada').style.display = 'none';
+                    alert('Producto agregado exitosamente');
                 } else {
                     alert(data.message || 'Error al agregar el producto.');
                 }
@@ -285,7 +337,8 @@
                 document.getElementById('nombre').value = fila.children[1].textContent;
                 document.getElementById('categoria').value = fila.children[2].textContent;
                 document.getElementById('precio').value = parseFloat(fila.children[3].textContent.replace('$',''));
-                // No se puede precargar la imagen por seguridad, pero se puede dejar el input vacío
+                // Hacer el campo de imagen opcional al editar
+                document.getElementById('imagen').required = false;
                 form.querySelector('button[type="submit"]').textContent = 'Modificar Producto';
                 form.dataset.editandoId = id;
             }
@@ -298,7 +351,8 @@
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
-                            fila.remove();
+                            cargarProductos();
+                            alert('Producto eliminado exitosamente');
                         } else {
                             alert(data.message || 'Error al eliminar el producto.');
                         }
